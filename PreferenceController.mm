@@ -7,6 +7,7 @@
  */
 
 #import "PreferenceController.h"
+#include "disasm.h" // for the disassembler flags
 
 @implementation MVPreferenceController
 
@@ -18,7 +19,7 @@
 
 - (IBAction)toggleOpenAtLaunch:(id)sender
 {
-  // nothing to do here?
+    qflag = (openAtLaunch.state == NSOnState);
 }
 
 @end

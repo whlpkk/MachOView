@@ -11,6 +11,7 @@
 		1836DB0023044721001D848A /* MKDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836DAFF23044721001D848A /* MKDragView.m */; };
 		1836DB02230478B3001D848A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1836DB01230478B2001D848A /* README.md */; };
 		256AC3DA0F4B6AC300CF3369 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* AppController.mm */; };
+		2B2B3FBA268EFA4500F5F99F /* libdisasm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2B3FB9268EFA4500F5F99F /* libdisasm.a */; };
 		3C0F958411F6589D0070A2FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C0F957E11F6589D0070A2FE /* InfoPlist.strings */; };
 		3C0F958511F6589D0070A2FE /* Layout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0F958011F6589D0070A2FE /* Layout.xib */; };
 		3C0F958611F6589D0070A2FE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0F958211F6589D0070A2FE /* MainMenu.xib */; };
@@ -89,6 +90,7 @@
 		29B97316FDCFA39411CA2CEA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2B2B3FB9268EFA4500F5F99F /* libdisasm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdisasm.a; sourceTree = "<group>"; };
 		3C0F957F11F6589D0070A2FE /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C0F958111F6589D0070A2FE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Layout.xib; sourceTree = "<group>"; };
 		3C0F958311F6589D0070A2FE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2B3FBA268EFA4500F5F99F /* libdisasm.a in Frameworks */,
 				1836DADD23043885001D848A /* libc++.tbd in Frameworks */,
 				3CC0022211F64A45000F7A3D /* Cocoa.framework in Frameworks */,
 			);
@@ -277,6 +280,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B2B3FB9268EFA4500F5F99F /* libdisasm.a */,
 				3CC0022111F64A45000F7A3D /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -719,13 +723,14 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PROFILING_CODE = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)",
-					"$(SRCROOT)/capstone/include",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/capstone/include\"",
+					"\"$(SRCROOT)/otool_disasm\"",
 				);
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = (
 					"-D__STDC_CONSTANT_MACROS",
@@ -748,7 +753,7 @@
 				PRODUCT_NAME = MachOView;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/capstone/include";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/capstone/include\"";
 				VALID_ARCHS = "$(inherited)";
 				VERSIONING_SYSTEM = "";
 			};
@@ -780,13 +785,14 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				GENERATE_PROFILING_CODE = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)",
-					"$(SRCROOT)/capstone/include",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/capstone/include\"",
+					"\"$(SRCROOT)/otool_disasm\"",
 				);
 				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = (
 					"-D__STDC_CONSTANT_MACROS",
@@ -810,7 +816,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/capstone/include";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/capstone/include\"";
 				VALID_ARCHS = "$(inherited)";
 				VERSIONING_SYSTEM = "";
 			};

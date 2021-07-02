@@ -8,7 +8,7 @@
 
 @interface MVPreferenceController: NSWindowController
 {
-  IBOutlet NSButton *   openAtLaunch;
+    IBOutlet NSButton *   openAtLaunch;
 }
 
 - (IBAction)toggleOpenAtLaunch:(id)sender;
